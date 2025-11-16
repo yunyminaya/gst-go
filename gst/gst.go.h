@@ -151,4 +151,8 @@ extern int sizeOfGCharArray (gchar ** arr);
 
 extern GstSample * getSampleValue (GValue * val);
 
+/* PadProbe utilities */
+
+extern void gstPadProbeInfoSetBuffer (GstPadProbeInfo * info, GstBuffer * buffer);
+
 #endif

@@ -167,6 +167,16 @@ GstSample * getSampleValue (GValue * val)
 	return gst_value_get_sample(val);
 }
 
+/* PadProbe utilities */
+
+void gstPadProbeInfoSetBuffer (GstPadProbeInfo * info, GstBuffer * buffer)
+{
+	gst_mini_object_replace(
+		(GstMiniObject **)&info->data,
+		buffer ? GST_MINI_OBJECT_CAST(buffer) : NULL
+	);
+}
+
 /* MpegtsSection Utilities */
 GstMpegtsSection *  mpegtsSectionRef    (GstMpegtsSection * section)    { return gst_mpegts_section_ref(section); }
 void                mpegtsSectionUnref  (GstMpegtsSection * section)    { gst_mpegts_section_unref(section); } 

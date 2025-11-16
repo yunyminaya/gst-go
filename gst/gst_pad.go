@@ -1124,6 +1124,14 @@ func (p *PadProbeInfo) GetBuffer() *Buffer {
 	return wrapBuffer(buf)
 }
 
+func (p *PadProbeInfo) SetBuffer(buf *Buffer) {
+	var cBuf *C.GstBuffer
+	if buf != nil {
+		cBuf = buf.Instance()
+	}
+	C.gstPadProbeInfoSetBuffer(p.ptr, cBuf)
+}
+
 // GetBufferList returns the buffer list, if any, inside this probe info.
 func (p *PadProbeInfo) GetBufferList() *BufferList {
 	bufList := C.gst_pad_probe_info_get_buffer_list(p.ptr)
