@@ -171,9 +171,7 @@ GstSample * getSampleValue (GValue * val)
 
 void gstPadProbeInfoSetBuffer (GstPadProbeInfo * info, GstBuffer * buffer)
 {
-	if (buffer != NULL)
-        buffer = gst_buffer_ref (buffer);   // give the probe machinery its own ref
-    info->data = buffer;
+	info->data = buffer;
 }
 
 /* MpegtsSection Utilities */
