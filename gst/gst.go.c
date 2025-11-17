@@ -171,10 +171,9 @@ GstSample * getSampleValue (GValue * val)
 
 void gstPadProbeInfoSetBuffer (GstPadProbeInfo * info, GstBuffer * buffer)
 {
-	gst_mini_object_replace(
-		(GstMiniObject **)&info->data,
-		buffer ? GST_MINI_OBJECT_CAST(buffer) : NULL
-	);
+	if (buffer != NULL)
+        buffer = gst_buffer_ref (buffer);   // give the probe machinery its own ref
+    info->data = buffer;
 }
 
 /* MpegtsSection Utilities */
