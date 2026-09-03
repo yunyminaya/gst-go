@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os:
-          - ubuntu-latest
+          - ubuntu-22.04
           - windows-latest
           - macos-latest
     runs-on: ${{ matrix.os }}
@@ -37,7 +37,7 @@ jobs:
         id: setup_gstreamer
         uses: blinemedical/setup-gstreamer@v1.4.0
         with:
-          version: "1.24.10"
+          version: "1.24.13"
           gstreamerOptions: |-
             -Dauto_features=disabled
             -Dgpl=enabled
