@@ -1,6 +1,6 @@
 module github.com/go-gst/go-gst/examples/plugins/minio
 
-go 1.22
+go 1.24
 
 require (
 	github.com/go-gst/go-glib v1.2.1
@@ -14,7 +14,7 @@ require (
 	github.com/go-ini/ini v1.67.0 // indirect
 	github.com/goccy/go-json v0.10.3 // indirect
 	github.com/google/uuid v1.6.0 // indirect
-	github.com/klauspost/compress v1.17.9 // indirect
+	github.com/klauspost/compress v1.18.7 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.8 // indirect
 	github.com/mattn/go-pointer v0.0.1 // indirect
 	github.com/minio/md5-simd v1.1.2 // indirect
